@@ -157,21 +157,26 @@ class HBNBCommand(cmd.Cmd):
             return
         new_instance = HBNBCommand.classes[spcsplit[0]]()
         if len(spcsplit) > 1:
+            print(spcsplit)
             for arg in spcsplit[1:]:
-                attr_name, attr_value = arg.split('=')
-                if (not attr_value.isnumeric() or 'id' in attr_name) \
-                   and '.' not in attr_value:
-                    setattr(new_instance, attr_name,
-                            replace_underscores(attr_value))
-                elif attr_value.isdecimal():
-                    setattr(new_instance, attr_name, int(attr_value))
-                elif attr_value.isnumeric():
-                    setattr(new_instance, attr_name, float(attr_value))
+                attr = arg.split('=')
+                
+                if (len(attr)<2 ):
+                    continue
+                if (not attr[1].isnumeric() or 'id' in attr[0]) \
+                   and '.' not in attr[1]:
+                    setattr(new_instance, attr[0],
+                            replace_underscores(attr[1]))
+                elif attr[1].isdecimal():
+                    setattr(new_instance, attr[0], int(attr[1]))
+                elif attr[1].isnumeric():
+                    setattr(new_instance, attr[0], float(attr[1]))
                 else:
-                    setattr(new_instance, attr_name,
-                            attr_value)
+                    setattr(new_instance, attr[0],
+                            attr[1])
         new_instance.save()
         print(new_instance.id)
+        
 
     def help_create(self):
         """ Help information for the create method """
@@ -249,6 +254,7 @@ class HBNBCommand(cmd.Cmd):
         print_list = []
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
+            print(args)
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
