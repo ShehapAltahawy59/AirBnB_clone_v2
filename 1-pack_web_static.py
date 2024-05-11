@@ -6,6 +6,7 @@ from the contents of the web_static folder of"""
 from fabric.api import *
 from datetime import datetime
 
+
 @task
 def do_pack():
     """
