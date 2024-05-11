@@ -11,7 +11,7 @@ import os
 from datetime import datetime
 
 
-env.hosts = ['54.237.101.82', '18.235.243.156']
+env.hosts = ['ubuntu@54.237.101.82:80', 'ubuntu@18.235.243.156:80']
 env.user = 'ubuntu'
 env['key_filename'] = '/school'
 
