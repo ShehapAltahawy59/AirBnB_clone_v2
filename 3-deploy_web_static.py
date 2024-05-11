@@ -63,3 +63,6 @@ def deploy():
     """
     created_archive = do_pack()
     return do_deploy(created_archive)
+
+
+deploy()
