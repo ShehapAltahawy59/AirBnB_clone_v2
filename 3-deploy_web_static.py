@@ -11,9 +11,9 @@ import os
 from datetime import datetime
 
 
-env['hosts'] = ['54.237.101.82', '18.235.243.156']
-env['user'] = 'ubuntu'
-env['key_filename'] = '~/.ssh/school'
+env.hosts = ['54.237.101.82', '18.235.243.156']
+env.user = 'ubuntu'
+env['key_filename'] = '/school'
 
 
 def do_pack():
