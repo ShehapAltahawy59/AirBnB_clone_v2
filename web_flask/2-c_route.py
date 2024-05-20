@@ -27,14 +27,16 @@ def hbnb_route():
     """
     return "HBNB"
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
     """
-    Displays 'HBNB'
+    display “C ” followed by the value of the text variable
+        (replace underscore '_' symbols with a space ' ')
     Returns:
-        str: "HBNB"
+        str: "C <text>"
     """
-    return "C {}".format(text.replace("_"," "))
+    return "C {}".format(text.replace('_', ' '))
 
 
 if __name__ == "__main__":
