@@ -11,7 +11,7 @@ from datetime import datetime
 
 
 env.hosts = ['54.237.101.82', '18.235.243.156']
-
+env.user = 'ubuntu'
 
 def do_pack():
     """
