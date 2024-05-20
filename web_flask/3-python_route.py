@@ -39,13 +39,15 @@ def c_route(text):
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python_route(text = "is cool"):
+def python_route(text = "is_cool"):
     """
-    Displays 'HBNB'
+    display “Python ”, followed by the value of the text variable
+        (replace underscore _ symbols with a space )
+        - The default value of text is “is cool”
     Returns:
-        str: "HBNB"
+        str: "Python <text>"
     """
-    return "Python  {}".format(text.replace("_"," "))
+    return "Python {}".format(text.replace("_"," "))
 
 
 if __name__ == "__main__":
