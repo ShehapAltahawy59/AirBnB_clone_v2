@@ -27,34 +27,39 @@ def hbnb_route():
     """
     return "HBNB"
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
     """
-    Displays 'HBNB'
+    display “C ” followed by the value of the text variable
+        (replace underscore '_' symbols with a space ' ')
     Returns:
-        str: "HBNB"
+        str: "C <text>"
     """
-    return "C {}".format(text.replace("_"," "))
+    return "C {}".format(text.replace('_', ' '))
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python_route(text = "is cool"):
+def python_route(text="is_cool"):
     """
-    Displays 'HBNB'
+    display “Python ”, followed by the value of the text variable
+        (replace underscore _ symbols with a space )
+        - The default value of text is “is cool”
     Returns:
-        str: "HBNB"
+        str: "Python <text>"
     """
-    return "Python  {}".format(text.replace("_"," "))
+    return "Python {}".format(text.replace('_', ' '))
+
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number_route(n):
     """
-    Displays 'HBNB'
+    display “n is a number” only if n is an integer
     Returns:
-        str: "HBNB"
+        int: the value of n
     """
-    return "{}  is a number".format(n)
+    return "{} is a number".format(n)
 
 
 if __name__ == "__main__":
