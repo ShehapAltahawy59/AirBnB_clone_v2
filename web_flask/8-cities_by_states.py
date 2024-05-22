@@ -10,20 +10,10 @@ from flask import render_template
 app = Flask(__name__)
 
 
-@app.route('/states_list', strict_slashes=False)
-def states_list_route():
-    """
-    List states: display a HTML page: (inside the tag BODY)
-    Returns:
-        html: template that lists all states sort by name A->Z
-    """
-    states = storage.all("State").values()
-    return render_template("7-states_list.html", states=states)
-
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states_route():
     """
-    List states: display a HTML page: (inside the tag BODY)
+    Cities by states: display a HTML page: (inside the tag BODY)
     Returns:
         html: template that lists all states sort by name A->Z
     """
